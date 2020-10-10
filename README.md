@@ -2,7 +2,9 @@
 
 University of Saskatchewan 
 
-Winter 2019 - Web Programming
+CMPT 350 - Web Programming
+
+Winter 2019
 
 Description :
 
