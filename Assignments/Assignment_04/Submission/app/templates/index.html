@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chatting App</title>
+  </head>
+
+  <style>
+    div.a{
+      text-align:center;
+    }
+  </style>
+
+  <body style="background-color: gold;">
+    <div class='a'>
+        <h1 style="font-size: 100px;">Chatting App</h1>
+        <h3>User Name : {{ name }}</h3>
+        <form method="POST">
+          {{ form.hidden_tag() }}
+          {{ form.room.label }}: {{ form.room() }}
+          {{ form.submit()   }}
+        </form><br><br>
+        <h2>Current Rooms :</h2>
+        {% block content %}
+            {% for x in room %}
+            <b>{{ x if x is not none }}</b>
+            <br><br>
+          {% endfor %}
+        {% endblock content %}
+    </div>
+  </body>
+</html>

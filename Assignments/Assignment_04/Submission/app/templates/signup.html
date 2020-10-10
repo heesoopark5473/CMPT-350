@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chatting App - Signup</title>
+    <script type="text/javascript" charset="utf-8">
+    function Signup(){
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        post_request(username, password);
+
+        function post_request(username, password){
+            const body = {
+                username: username,
+                password: password
+            }
+            return fetch("http://127.0.0.1:5000/signup_post",{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(body)
+            }).then(response => {
+                if(response.status == 200){
+                    alert("Sign Up Successful!");
+                    let url = window.location.href.split("/");
+                    url = url[0] + "//" + url[2];
+                    window.location = url + "/";
+                }else{
+                    alert("Sign Up Failed!");
+                }
+            }
+            );
+        }
+    }
+    </script>
+  </head>
+  <style>
+    div.a{
+      text-align: center;
+    }
+    .input{
+      width: 100px;
+      height: 10px;
+      padding: 10px;
+      margin: 5px;
+    }
+    .button{
+      width: 100px;
+      height: 25px;
+      padding: 5px;
+      margin: 5px;
+      background-color:royalblue;
+      font-weight: bold;
+    }
+  </style>
+  <body style = "background-color: coral;">
+      <div class='a'>
+            <h1>CMPT 350 - Chatting App </h1>
+            <h2> Signup </h2>            
+            <input class='input' id="username" placeholder="usrename" type="text"></input><br>
+            <input class='input'id="password" placeholder="password" type="text"></input><br>
+            <button class='button' id="signup" type="button" onclick="Signup()">Sign up</button>      
+      </div>
+
+  </body>
+</html>

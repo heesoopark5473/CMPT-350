@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Room: {{ room }}</title>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            var socket;
+            var username;
+            $(document).ready(function(){
+                username = $('#htmlname').val();
+                socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
+                socket.on('connect', function() {
+                    socket.emit('joined', {user: username});
+                });
+                socket.on('status', function(data) {
+                    // $('#chat').val($('#chat').val() + '<' + data.msg + '>\n');
+                    // $('#chat').scrollTop($('#chat')[0].scrollHeight);
+                    //alert(data.msg);
+                });
+                socket.on('message', function(data) {
+                    console.log(data)
+                    $('#chat').val($('#chat').val() + data.msg + '\n');
+                    $('#chat').scrollTop($('#chat')[0].scrollHeight);
+                });
+                socket.on('clear', function() {
+                    $('#chat').val('');
+                })
+
+                $('#text').keypress(function(e) {
+                    var code = e.keyCode || e.which;
+                    if (code == 13) {
+                        text = $('#text').val();
+                        $('#text').val('');
+                        socket.emit('text', {msg: text, user: username});
+                    }
+                });
+            });
+            function leave_room() {
+                socket.emit('left', {}, function() {
+                    socket.disconnect();
+                    let url = window.location.href.split("/");
+                    url = url[0] + "//" + url[2];
+                    window.location = url + "/lounge/"+username;
+                });
+            }
+        </script>
+    </head>
+    <style>
+        div.a{
+            text-align: center;
+        }
+    </style>
+    <div class='a'>
+        <body style="background-color:sandybrown">
+            <textarea id = 'htmlroom' style="background-color: springgreen;">Room : {{ room }}</textarea><br>
+            <textarea id = 'htmlname' style="background-color:turquoise;">{{ name }}</textarea><br><br><br>
+            <textarea id="chat" cols="80" rows="20" style="background-color: thistle;"></textarea><br><br>
+            <input id="text" size="80" placeholder="Enter your message here"><br><br><br><br>
+            <a href="#" onclick="leave_room();">Leave this room</a>
+        </body>
+    </div.a>
+</html>

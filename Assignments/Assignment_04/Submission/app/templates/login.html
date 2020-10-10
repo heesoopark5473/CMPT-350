@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Chatting App - Login</title>
+    <script type="text/javascript" charset="utf-8">
+    
+    function Login(){
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      console.log(username, password);
+      post_request(username, password);
+    }
+
+    function Signup(){
+      let url = window.location.href.split("/");
+      url = url[0] + "//" + url[2];
+      window.location = url + "/signup";
+    }
+
+    function post_request(username, password){
+      const body = {
+        username: username,
+        password: password
+      }
+      return fetch("http://127.0.0.1:5000/login_post",{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
+      }).then(response => response.json())
+        .then(data => {
+          if(data.message == 'success'){
+            alert(data.username + ' Log in Success!');
+            let url = window.location.href.split("/");
+            url = url[0] + "//" + url[2];
+            window.location = url + "/lounge/"+data.username;
+          }else{
+            alert('Log In Failed!');
+          }
+        })
+    }
+    
+    </script>
+  </head>
+  <body style = "background-color:powderblue">
+    <style>
+      div.a{
+        text-align: center;
+      }
+      .input{
+        width: 100px;
+        height: 10px;
+        padding: 10px;
+        margin: 5px;
+      }
+      .button{
+        width: 100px;
+        height: 25px;
+        padding: 5px;
+        margin: 5px;
+        background-color:royalblue;
+        font-weight: bold;
+      }
+    </style>
+
+    <div class='a'>
+      <h1>CMPT 350 - Chatting App </h1>
+      <h2> Login </h2>
+      <input class='input' id="username" placeholder="usrename" type="text"></input><br>
+      <input class='input' id="password" placeholder="password" type="text"></input><br>
+      <button class='button' id="login" type="button"  onclick="Login()">Log in</button><br>
+      <button class='button' id="signup" type="button"  onclick="Signup()">Sign up</button>
+    </div>
+  </body>
+</html>
