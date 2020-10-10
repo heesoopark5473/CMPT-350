@@ -1,0 +1,17 @@
+.listInfo {
+    text-align: center;
+    font-size: 20px;
+}
+
+.listInfo i {
+    margin-right: 5px;
+}
+
+.authorName {
+    margin-right: 7px;
+    background: #d1d1d1;
+    color: #fff;
+    padding: 2px 5px;
+}
+
+
