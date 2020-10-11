@@ -1,0 +1,139 @@
+.logo_image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}
+
+.cs_image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+.grading_image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.prof_image{
+  display: block;
+  margin-left:auto;
+  margin-right: auto;
+  width: 15%;
+}
+
+.center{
+  text-align: center;
+}
+
+.timeDes{
+  text-align: center;
+  font-size: 30px;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /*width: 200px;*/
+  overflow: hidden;
+  background-color: #333;
+  /*border: 1px solid #555;*/
+}
+
+li{
+  float: left;
+}
+
+li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 40px;
+  text-decoration: none;
+}
+
+li a:hover{
+  background-color: #111;
+}
+
+.assignments{
+  font-size: 20px;
+  background-color: #A9DFBF;
+}
+
+.uniName{
+  font-size: 60px;
+  text-align: center;
+  color: #4CAF50;
+  text-transform: uppercase;
+}
+
+.className{
+  font-size: 50px;
+  text-align: center;
+}
+
+.topic{
+  font-size: 40px;
+  text-align: center;
+  background-color: #52BE80;
+}
+
+.description{
+  font-size: 20px;
+  text-align: center;
+  background-color: #A9DFBF;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+}
+
+.containerTab {
+  padding: 20px;
+  color: white;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Closable button inside the image */
+.closebtn {
+  float: right;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.objective{
+  text-align: center;
+  color: black;
+  background-color: white;
+  font-size: 20px;
+  background-color: #A9DFBF;
+}
+
+#one {display: none;}
+
+#two {display: none;}
+
+#three {display: none;}
+
+#four {display: none;}
+
+#five {display: none;}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <title> HTML Tutorial </title>
+
+  <head>
+    <mega charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
+
+  </head>
+
+  <body onload = "HomeFunction();">
+    <ul>
+      <li><a href="#home" onclick=HomeFunction();>Home</a></li>
+      <li><a href="#time" onclick=TimeFunction();>Time & Location</a></li>
+      <li><a href="#objective" onclick=ObjFunction();>Course Objective</a></li>
+      <li><a href="#grading" onclick=GradingFunction();>Grading Scheme</a></li>
+      <li><a href="#about" onclick=AboutFunction();>About</a></li>
+    </ul>
+
+    <img src="images/logo.jpeg" alt="logo" class="logo_image" style="padding-top: 20px">
+
+    <h1 class="uniName">
+        University of Saskatchewan
+    </h1>
+
+    <h2 class="className">
+        CMPT 350
+    </h2>
+
+    <p class="topic" id="topic"></p>
+
+    <div id="one">
+      <body>
+        <p class="description" id="description"></p>
+      </body>
+    </div>
+
+    <div id="two">
+      <body>
+
+        <p id="lecture" class="timeDes"></p>
+
+        <div class="row">
+          <div class="column" onclick="openTab('b1');" style="background:#186A3B;">Monday     (12:30 pm - 1:20 pm)</div>
+          <div class="column" onclick="openTab('b2');" style="background:#1D8348;">Wednesday  (12:30 pm - 1:20 pm)</div>
+          <div class="column" onclick="openTab('b3');" style="background:#239B56;">Friday     (12:30 pm - 1:20 pm)</div>
+        </div>
+
+        <div id="b1" class="containerTab" style="display:none;background:#186A3B">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+          <h2>Monday     (12:30 pm - 1:20 pm)</h2>
+          <p><b>Location: ARTS 134</b></p>
+        </div>
+
+        <div id="b2" class="containerTab" style="display:none;background:#1D8348">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+          <h2>Wednesday  (12:30 pm - 1:20 pm)</h2>
+          <p><b>Location: ARTS 134</b></p>
+        </div>
+
+        <div id="b3" class="containerTab" style="display:none;background:#239B56">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+          <h2>Friday     (12:30 pm - 1:20 pm)</h2>
+          <p><b>Location: ARTS 134</b></p>
+        </div>
+
+        <p id="tutorial" class="timeDes"></p>
+
+        <div class="row">
+          <div class="column" onclick="openTab('c1');" style="background:#186A3B;">Monday     (3:30 pm - 4:20 pm)</div>
+          <div class="column" onclick="openTab('c2');" style="background:#1D8348;">Wednesday  (10:30 am - 11:20 am)</div>
+          <div class="column" onclick="openTab('c3');" style="background:#239B56;">Wednesday  (4:30 pm - 5:20 pm)</div>
+          <div class="column" onclick="openTab('c4');" style="background:#2ECC71;">Thursday   (9:00 am - 9:50 am)</div>
+        </div>
+
+        <div id="c1" class="containerTab" style="display:none;background:#186A3B">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+          <h2>Monday     (3:30 pm - 4:20 pm)</h2>
+          <p><b>Location: Thorvaldson Building | Room S320</b></p>
+        </div>
+
+        <div id="c2" class="containerTab" style="display:none;background:#1D8348">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+          <h2>Wednesday  (10:30 am - 11:20 am)</h2>
+          <p><b>Location: Thorvaldson Building | Room S320</b></p>
+        </div>
+
+        <div id="c3" class="containerTab" style="display:none;background:#239B56">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+          <h2>Wednesday  (4:30 pm - 5:20 pm)</h2>
+          <p><b>Location: Thorvaldson Building | Room S320</b></p>
+        </div>
+
+        <div id="c4" class="containerTab" style="display:none;background:#2ECC71">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+          <h2>Thursday   (9:00 am - 9:50 am)</h2>
+          <p><b>Location: Thorvaldson Building | Room S320</b></p>
+        </div>
+
+        <p id="officeHour" class="timeDes"></p>
+
+        <div class="row">
+          <div class="column" onclick="openTab('d1');" style="background:#186A3B;">Monday     (8:00 am - 12:00pm)</div>
+          <div class="column" onclick="openTab('d2');" style="background:#1D8348;">Monday     (1:30 pm - 4:30 pm)</div>
+          <div class="column" onclick="openTab('d3');" style="background:#239B56;">Wednesday  (8:00 am - 12:00pm)</div>
+          <div class="column" onclick="openTab('d4');" style="background:#2ECC71;">Wednesday  (1:30 pm - 4:30 pm)</div>
+        </div>
+
+        <div id="d1" class="containerTab" style="display:none;background:#186A3B">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+          <h2>Monday     (8:00 am - 12:00pm)</h2>
+          <p><b>Location: Thorvaldson Building | Room 178.9</b></p>
+        </div>
+
+        <div id="d2" class="containerTab" style="display:none;background:#1D8348">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+          <h2>Monday     (1:30 pm - 4:30 pm)</h2>
+          <p><b>Location: Thorvaldson Building | Room 178.9</b></p>
+        </div>
+
+        <div id="d3" class="containerTab" style="display:none;background:#239B56">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+          <h2>Wednesday  (8:00 am - 12:00pm)</h2>
+          <p><b>Location: Thorvaldson Building | Room 178.9</b></p>
+        </div>
+
+        <div id="d4" class="containerTab" style="display:none;background:#2ECC71">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+          <h2>Wednesday  (1:30 pm - 4:30 pm)</h2>
+          <p><b>Location: Thorvaldson Building | Room 178.9</b></p>
+        </div>
+
+      </body>
+    </div>
+
+    <div id="three">
+      <body>
+        <ol id="courseObjective" class="objective" style="list-style-type:square;">
+        </ol>
+      </body>
+    </div>
+
+    <div id="four">
+      <img src="images/grading_scheme.png" alt="grading" class="grading_image" style="padding-top: 20px">
+
+      <ol id="assignmentDue" class="assignments" style="list-style-type:square;">
+      </ol>
+    </div>
+
+    <div id="five">
+      <img src="images/prof.jpeg" alt="prof" class="prof_image" style="padding-top: 20px">
+
+      <p class="center"> <b>Prof. Sara Rouhani <b></p>
+      <p class="center"> <b>Email: sara.rouhani@usask.ca <b></p>
+
+    </div>
+
+  </body>
+
+  <img src="images/usask_cs.png" alt="cs" class="cs_image" style="padding-top: 100px">
+
+  <script src="js/script.js"></script>
+
+</html>
